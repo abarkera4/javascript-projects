@@ -26,7 +26,6 @@ else if (fuelLevel <= 5000 || engineTemperature > 2500) {
 } 
 else if (fuelLevel > 20000 && engineTemperature <= 2500){
     console.log("Full tank. Engines good.");
-
 }
 else if (fuelLevel > 10000 && engineTemperature <= 2500) {
     console.log("Fuel level above 50%.  Engines good.");
@@ -34,7 +33,6 @@ else if (fuelLevel > 10000 && engineTemperature <= 2500) {
 else if (fuelLevel > 5000 && engineTemperature <= 2500) {
     console.log("Fuel level above 25%. Engines good.");
 }
-
 else {
     console.log("Fuel and engine status pending...");
 }
