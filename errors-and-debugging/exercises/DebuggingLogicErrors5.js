@@ -30,16 +30,10 @@ if (crewStatus && computerStatus === 'green'){
 
 if (crewReady && fuelReady) {
    launchReady = true
-   console.log("Cleared to Launch!")
-} else {
-   launchReady = false
-   console.log("LaunchReady = ", launchReady)
-}
-
-if (launchReady) {
    console.log("10, 9, 8, 7, 6, 5, 4, 3, 2, 1...")
    console.log("Liftoff!")
 } else {
+   launchReady = false
    console.log("Launch scrubbed!")
 }
 
