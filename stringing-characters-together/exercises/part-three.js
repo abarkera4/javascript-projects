@@ -16,7 +16,7 @@ console.log(`The abbreviation for '${language}' is '${language[language.indexOf(
 
 //4. Just for fun, try chaining 3 or more methods together, and then print the result.
 
-console.log(`We will soon learn ${language.slice(language.indexOf("J"), language.indexOf("S")).toUpperCase()}.`);
+console.log(`We will soon learn ${language.slice(language.indexOf("J"), language.indexOf("S")).toUpperCase().toLowerCase()}.`);
 
 //Part Three section Two
 
