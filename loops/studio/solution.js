@@ -8,7 +8,6 @@ let veggies = ['peas', 'green beans', 'kale', 'edamame', 'broccoli', 'asparagus'
 let beverages = ['juice', 'milk', 'water', 'soy milk', 'soda', 'tea'];
 let desserts = ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'];
 
-
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   let pantry = [protein, grains, veggies, beverages, desserts];
   let meals = [];
@@ -18,7 +17,6 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   for (let i = 0; i < numMeals; i++) {
     let meal = [];
     meal.push(pantry[0][i],pantry[1][i], pantry[2][i], pantry[3][i], pantry[4][i])
-    //console.log(meal[0])
     meals.push(meal)
   }
 
@@ -74,8 +72,6 @@ function runProgram() {
    console.log("Time to run the password generator so we can update the menu tomorrow.")
    console.log(`The new password is: ${generatePassword(password1, password2)}`);
 }
-runProgram()
-
 module.exports = {
   protein: protein,
   grains: grains,

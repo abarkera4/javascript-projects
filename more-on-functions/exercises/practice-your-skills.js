@@ -13,3 +13,19 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let practiceFunction = function(param1) {
+    if (isNaN(param1) ) {
+        param1 = "ARRR!"
+
+        return param1;
+    } else {
+        param1 *= 3
+
+        return param1;
+    }
+}
+console.log(practiceFunction(str))
+
+let mappedArr = arr.map(practiceFunction)
+console.log(mappedArr)

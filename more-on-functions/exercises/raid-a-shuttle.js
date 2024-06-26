@@ -21,6 +21,33 @@ function holdStatus(arr){
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
+let notSuspiciousAtAll = function(a) {
+  if (checkFuel(a) === 'green') {
+    return a - 100001;
+  } else if (checkFuel(a) === 'yellow') {
+    return a - 50001;
+  } else {
+    return a
+  }
+
+}
+let alsoNotSuspicious = function(b) {
+  if (b.includes('gold') && b.includes('satellite')) {
+    b.splice(b.indexOf('gold'), 1, "copy paper");
+    b.splice(b.indexOf('satellite'), 1, "PEZ");
+    let goods = ['gold', 'satellite'];
+
+    return goods;
+  }
+}
+
+let irs = function(levelOfFuel, itemsInCargo) {
+  let arr = alsoNotSuspicious(itemsInCargo);
+  return `Raided ${notSuspiciousAtAll(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
+}
+
+console.log(irs(fuelLevel, cargoHold));
+
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
@@ -37,6 +64,8 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 /* Next, liberate some of that glorious cargo.
  */
+
+
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
