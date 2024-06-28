@@ -20,7 +20,7 @@ let superChimpTwo = {
    mass: 11,
    age: 6,
    move: function () {return Math.floor(Math.random()*11)},
-}
+};
 
 let doggo = {
    name: "Leroy",
@@ -28,7 +28,7 @@ let doggo = {
    mass: 14,
    age: 5,
    move: function () {return Math.floor(Math.random()*11)},
-}
+};
 
 let tardigrade = {
    name: "Almina",
@@ -36,7 +36,7 @@ let tardigrade = {
    mass: 0.0000000001,
    age: 1,
    move: function () {return Math.floor(Math.random()*11)},
-}
+};
 
 let crew = [superChimpOne, salamander, superChimpTwo, doggo, tardigrade];
 
@@ -72,7 +72,7 @@ function idIsAlreadyUsed(id) {
  }
 
  for (i = 0; i < crew.length; i++){
-   crewReports(crew[i])
+   crewReports(crew[i]);
  }
 
 // Add a move method to each animal object
@@ -94,6 +94,6 @@ function fitnessTest(candidates){
       }
       results.push(`${candidates[i].name} took ${turns} turns to take 20 steps.`)
    }
-   return results
+   return results;
 }
-console.log(fitnessTest(crew))
+console.log(fitnessTest(crew));

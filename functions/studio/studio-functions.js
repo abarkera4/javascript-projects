@@ -9,6 +9,20 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+function reverseCharacters(input) {
+
+    if (typeof input === 'string'){
+
+    input = input.split("").reverse().join("");
+    } else if (typeof input === 'number'){
+
+        input = Number(String(input).split("").reverse().join(""));
+    }
+    return input;
+}
+let str = 1234;
+console.log(reverseCharacters(str));
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -30,6 +44,17 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+function reverseArray (inputArray) {
+let arr = [];
+
+for (i = 0; i < inputArray.length; i++) {
+    arr.unshift(reverseCharacters(inputArray[i]))
+}
+return arr
+}
+
+console.log(reverseArray(arrayTest3))
+
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
@@ -49,3 +74,27 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+function funPhrase(inputString) {
+    let modifiedString;
+    if (inputString.length <= 3) {
+        modifiedString = inputString.slice(inputString.length - 1 , inputString.length)
+    } else {
+        modifiedString = inputString.slice(0, 3)
+    }
+    return `We put the ${modifiedString} in ${inputString}`
+}
+let shortStr = "Fun"
+let longStr = "Functions rock!"
+console.log(funPhrase(shortStr))
+console.log(funPhrase(longStr))
+
+
+
+function calculateAreaOfRectangle(width, length = width) {
+    let area = width * length
+
+    return area
+}
+
+console.log(calculateAreaOfRectangle(5))
