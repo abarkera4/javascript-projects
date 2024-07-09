@@ -11,7 +11,7 @@ function crewMass (arr) {
 
 function fuelRequired(arr){
   let rocketMass = 75000;
-  let fuelMass = 0
+  let fuelMass = 0;
   for (let i =  0; i < arr.length; i++) {
     rocketMass += Math.round(Number(arr[i].mass) * 10) / 10
     if (arr[i].species === 'dog' || arr[i].species === 'cat' ) {
@@ -26,7 +26,6 @@ function fuelRequired(arr){
   console.log(`The mission has a launch mass of ${rocketMass} kg and requires ${fuelMass} kg of fuel.`)
   return fuelMass
 }
-
 
 // The pre-selected crew is in the array at the end of this file.
 // Feel free to add, remove, or switch crew members as you see fit.
@@ -77,5 +76,5 @@ let candidateA = {
  let crew = [candidateB,candidateD,candidateF];
 
  console.log(crewMass(crew))
+
  console.log(fuelRequired(crew))
- 
