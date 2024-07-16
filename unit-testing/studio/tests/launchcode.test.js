@@ -35,14 +35,13 @@ describe("Testing launchcode", function(){
 
   test("launchOutput tests", function(){
     const testArgs = [2, 3, 5, 6, 15, 10, 30, 7];
-    const testReturns = ['Launch!', 'Code!', 'Rocks!', 'LaunchCode!', 'Code Rocks!', 'Launch Rocks!', 'LaunchCode Rocks!', "Rutabagas! That doesn't work."];
-
+    const testReturns = ['Launch!', 'Code!', 'Rocks!', 'LaunchCode!', 'Code Rocks!', 'Launch Rocks! (CRASH!!!!)', 'LaunchCode Rocks!', "Rutabagas! That doesn't work."];
     let launchOutput = launchcode.launchOutput;
+
     for (let i = 0; i < testArgs.length; i++) {
       expect(launchOutput(testArgs[i])).toBe(testReturns[i])
     }
   });
 
   // Write your unit tests here!
-  
 });

@@ -11,7 +11,7 @@ let launchcode = {
             { condition: num % 2 !== 0 && num % 3 !== 0 && num % 5 === 0, message: 'Rocks!' },
             { condition: num % 2 === 0 && num % 3 === 0 && num % 5 !== 0, message: 'LaunchCode!' },
             { condition: num % 2 !== 0 && num % 3 === 0 && num % 5 === 0, message: 'Code Rocks!' },
-            { condition: num % 2 === 0 && num % 3 !== 0 && num % 5 === 0, message: 'Launch Rocks!' },
+            { condition: num % 2 === 0 && num % 3 !== 0 && num % 5 === 0, message: 'Launch Rocks! (CRASH!!!!)' },
             { condition: num % 2 === 0 && num % 3 === 0 && num % 5 === 0, message: 'LaunchCode Rocks!' }
         ];
 
