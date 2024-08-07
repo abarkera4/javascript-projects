@@ -12,10 +12,6 @@ function init() {
       event.preventDefault();
       return;
     }
-    if (boosterCount.value < 1 || boosterCount.value > 10) {
-      alert("Booster count must be a positive number less than or equal to 10");
-      event.preventDefault();
-    }
   });
 }
 
