@@ -1,19 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search Engine Selector</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      function setSearchEngine(event) {
+        event.preventDefault();
 
-<head>
-	<meta charset="utf-8">
-	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
-	</script>
-</head>
+        let actions = {
+          google: "https://www.google.com/search",
+          duckDuckGo: "https://duckduckgo.com/",
+          bing: "https://www.bing.com/search",
+          ask: "https://www.ask.com/web",
+        };
 
-<body>
+        let selectedEngine = document.querySelector('input[name="engine"]:checked');
+        let searchTerm = document.querySelector('input[name="q"]').value.trim();
+        let searchForm = document.getElementById("searchForm");
+        let errorMessage = document.getElementById("error-message");
 
-	<form id="searchForm">
-    <!-- TODO: add form elements -->
-	</form>
+        if (!selectedEngine) {
+          errorMessage.textContent = "Please select a search engine.";
+          return;
+        }
 
-</body>
+        if (searchTerm === "") {
+          errorMessage.textContent = "Please enter a search term.";
+          return;
+        }
+
+        errorMessage.textContent = "";
+
+        let actionURL = actions[selectedEngine.value];
+
+        searchForm.setAttribute("action", actionURL);
+        searchForm.submit();
+      }
+
+      window.addEventListener("load", function () {
+        let searchForm = document.getElementById("searchForm");
+        searchForm.addEventListener("submit", setSearchEngine);
+      });
+    </script>
+  </head>
+  <body>
+    <form id="searchForm" method="GET">
+      <input type="text" name="q" placeholder="Enter your search term here" />
+      <label> <input type="radio" name="engine" value="google" /> Google </label>
+      <label> <input type="radio" name="engine" value="duckDuckGo" /> DuckDuckGo </label>
+      <label> <input type="radio" name="engine" value="bing" /> Bing </label>
+      <label> <input type="radio" name="engine" value="ask" /> Ask </label>
+      <button type="submit">Go!</button>
+      <div id="error-message" class="error"></div>
+    </form>
+  </body>
+</html>
